@@ -32,6 +32,65 @@
   <body>
     <a class="skip-link" href="#main-content">Skip to content</a>
 
+    <div
+      class="intro-game"
+      id="intro-game"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="intro-title"
+      aria-describedby="intro-description"
+    >
+      <button class="intro-skip" id="intro-skip" type="button">Skip intro</button>
+
+      <div class="intro-shell">
+        <div class="intro-copy">
+          <p class="intro-kicker">Interactive welcome</p>
+          <h2 class="intro-title" id="intro-title">Catch the Glow</h2>
+          <p class="intro-description" id="intro-description">
+            Catch five sparks to reveal <strong>Islam</strong>, then the portfolio unlocks.
+          </p>
+
+          <div class="intro-meta" aria-label="How the game works">
+            <span>5 catches</span>
+            <span>Reveal Islam</span>
+            <span>Auto unlock</span>
+          </div>
+        </div>
+
+        <div class="intro-playfield">
+          <div
+            class="intro-arena"
+            id="intro-arena"
+            tabindex="0"
+            role="application"
+            aria-label="Catch the glow game"
+          >
+            <div class="intro-arena-head">
+              <p class="intro-arena-label">Reveal the name</p>
+              <div class="intro-progress" aria-live="polite">
+                <div class="intro-progress-dots" id="intro-progress-dots" aria-hidden="true"></div>
+                <span class="sr-only" id="intro-score-status">0 of 5 letters revealed</span>
+              </div>
+            </div>
+
+            <p class="intro-arena-subtitle">Catch the spark to reveal Islam.</p>
+
+            <div class="intro-name" id="intro-name" aria-live="polite" aria-label="Name reveal"></div>
+
+            <div class="intro-spark-zone" id="intro-spark-zone">
+              <div class="intro-spark-aura intro-spark-aura-one" aria-hidden="true"></div>
+              <div class="intro-spark-aura intro-spark-aura-two" aria-hidden="true"></div>
+              <button class="intro-spark" id="intro-spark" type="button" aria-label="Catch spark">
+                <span class="intro-spark-core" aria-hidden="true"></span>
+              </button>
+            </div>
+
+            <p class="intro-feedback" id="intro-feedback" aria-live="polite">Catch the first spark.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <div class="page-shell">
       <div class="orb orb-one" aria-hidden="true"></div>
       <div class="orb orb-two" aria-hidden="true"></div>
@@ -129,7 +188,7 @@
             </aside>
           </div>
 
-          <a class="hero-scroll" href="#about">Scroll</a>
+          <a class="hero-scroll scroll-link" href="#about">Scroll</a>
         </section>
 
         <section id="about" class="section">
@@ -158,16 +217,6 @@
                   Ask me about networking, Git, or Flutter development.
                 </p>
 
-                <div class="about-actions">
-                  <a
-                    class="btn btn-primary"
-                    href="https://www.linkedin.com/in/isllamr"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    View LinkedIn
-                  </a>
-                </div>
               </div>
 
               <div class="about-stats reveal">
@@ -190,6 +239,8 @@
               </div>
             </div>
           </div>
+
+          <a class="section-scroll scroll-link" href="#skills">Scroll</a>
         </section>
 
         <section id="skills" class="section">
@@ -203,7 +254,7 @@
 
             <div class="skills-grid">
               <article class="skill-card reveal">
-                <span class="skill-icon">FL</span>
+                <span class="skill-icon" aria-hidden="true">🦩</span>
                 <h3 class="skill-name">Flutter</h3>
                 <p class="skill-desc">
                   Building cross-platform apps with a widget-first workflow, strong UI control,
@@ -215,7 +266,7 @@
               </article>
 
               <article class="skill-card reveal reveal-delay">
-                <span class="skill-icon">DA</span>
+                <span class="skill-icon" aria-hidden="true">🎯</span>
                 <h3 class="skill-name">Dart</h3>
                 <p class="skill-desc">
                   Writing structured, readable Dart with async workflows, null safety, and
@@ -227,7 +278,7 @@
               </article>
 
               <article class="skill-card reveal reveal-delay-2">
-                <span class="skill-icon">FB</span>
+                <span class="skill-icon" aria-hidden="true">🔥</span>
                 <h3 class="skill-name">Firebase</h3>
                 <p class="skill-desc">
                   Working with authentication, Firestore, cloud storage, and mobile-friendly
@@ -239,7 +290,7 @@
               </article>
 
               <article class="skill-card reveal reveal-delay-3">
-                <span class="skill-icon">SM</span>
+                <span class="skill-icon" aria-hidden="true">🧩</span>
                 <h3 class="skill-name">State Management</h3>
                 <p class="skill-desc">
                   Exploring Provider, Riverpod, and BLoC patterns for scalable, testable,
@@ -251,7 +302,7 @@
               </article>
 
               <article class="skill-card reveal">
-                <span class="skill-icon">API</span>
+                <span class="skill-icon" aria-hidden="true">🔌</span>
                 <h3 class="skill-name">REST APIs</h3>
                 <p class="skill-desc">
                   Integrating APIs, handling JSON models, and connecting network-driven flows
@@ -263,8 +314,8 @@
               </article>
 
               <article class="skill-card reveal reveal-delay">
-                <span class="skill-icon">UI</span>
-                <h3 class="skill-name">UI and UX</h3>
+                <span class="skill-icon" aria-hidden="true">🎨</span>
+                <h3 class="skill-name">UI/UX Design</h3>
                 <p class="skill-desc">
                   Designing modern layouts, consistent components, and interaction patterns
                   that feel calm and clear.
@@ -275,6 +326,8 @@
               </article>
             </div>
           </div>
+
+          <a class="section-scroll scroll-link" href="#projects">Scroll</a>
         </section>
 
         <section id="projects" class="section">
@@ -288,10 +341,16 @@
 
             <div class="projects-grid">
               <article class="project-card reveal">
-                <div class="project-thumb thumb-commerce">
+                <a
+                  class="project-thumb thumb-commerce"
+                  href="https://evara-bns-production.up.railway.app/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Open Evara-BNS live demo"
+                >
                   <span class="project-mark">EVARA</span>
-                  <span class="project-badge badge-live">GitHub</span>
-                </div>
+                  <span class="project-badge badge-live">Live demo</span>
+                </a>
                 <div class="project-body">
                   <div class="project-tags">
                     <span class="project-tag">Supabase</span>
@@ -317,9 +376,11 @@
                     </a>
                     <a
                       class="project-link"
-                      href="mailto:isllamamr@gmail.com?subject=Evara-BNS%20Project%20Inquiry"
+                      href="https://evara-bns-production.up.railway.app/"
+                      target="_blank"
+                      rel="noopener noreferrer"
                     >
-                      Ask about project
+                      Live Demo
                     </a>
                   </div>
                 </div>
@@ -403,6 +464,8 @@
               </article>
             </div>
           </div>
+
+          <a class="section-scroll scroll-link" href="#contact">Scroll</a>
         </section>
 
         <section id="contact" class="section">
@@ -415,13 +478,10 @@
               </h2>
               <p class="contact-copy">
                 If you want to connect, review my work, or reach out about collaboration, you
-                can contact me directly by email or find me on GitHub and LinkedIn.
+                can explore my GitHub or send a message directly.
               </p>
 
               <div class="contact-links">
-                <a class="social-btn" href="mailto:isllamamr@gmail.com">
-                  isllamamr@gmail.com
-                </a>
                 <a
                   class="social-btn"
                   href="https://github.com/IsllamAmr"
@@ -429,14 +489,6 @@
                   rel="noopener noreferrer"
                 >
                   GitHub
-                </a>
-                <a
-                  class="social-btn"
-                  href="https://www.linkedin.com/in/isllamr"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  LinkedIn
                 </a>
               </div>
 
@@ -448,6 +500,8 @@
               </a>
             </div>
           </div>
+
+          <a class="section-scroll section-scroll-up scroll-link" href="#hero">Top</a>
         </section>
       </main>
 
