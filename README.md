@@ -1,27 +1,14 @@
-# Islam Amr Portfolio
+# Islam Amr · Portfolio
 
-A modern single-page portfolio for Islam Amr, built with:
+Personal site of Islam Amr, AI Engineer (local Arabic LLMs & agents, voice AI, LLM security, motion graphics).
 
-- `index.html` for the page structure and content
-- `styles.css` for layout, colors, responsive behavior, and animations
-- `script.js` for navigation, active section tracking, reveal effects, and typed text
+**Live:** https://isllamamr.github.io/Portfolio/
 
-## Current Setup
+## What's inside
 
-- Personal name has been updated to `Islam Amr`
-- Contact email has been updated to `isllamamr@gmail.com`
-- GitHub has been connected to `https://github.com/IsllamAmr`
-- LinkedIn has been connected to `https://www.linkedin.com/in/isllamr`
-- Featured repositories now reflect the public work shown on GitHub
-- The project uses external CSS and JavaScript files for cleaner maintenance
+- `index.html`: single page with hero, an interactive terminal, the SAHIR case study, motion graphics, stack, earlier work and contact
+- `styles.css`: dark and light themes (follows the system, with a manual toggle), responsive layout, and animations that respect reduced-motion settings
+- `script.js`: terminal commands (`help`, `whoami`, `sahir`, `evals`, `inject`, …), theme toggle, scroll reveal and active nav
+- `og.png`: preview image for link sharing
 
-## Next Customization Ideas
-
-- Add your real Facebook or Instagram if you want them visible too
-- Replace email-based resume requests with a direct CV file link if you have one
-- Add screenshots for each project section
-- Update skill levels as your experience grows
-
-## Run Locally
-
-Open `index.html` directly in your browser, or serve the folder with any local static server.
+No framework and no build step. GitHub Pages serves the `main` branch as is.
